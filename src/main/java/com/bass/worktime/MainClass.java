@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
+import java.util.Formatter;
 
 /**
  * Created by a.makarov on 20.07.2018.
@@ -28,7 +29,12 @@ public class MainClass extends HttpServlet {
     }
 
     public double getTime(){
-        double time = (double)Math.round(finalTime/3600000f*10)/10;
+        //double time = (double)Math.round(finalTime/3600000f*10)/10;
+        return finalTime/1000;
+    }
+
+    public String getTimeString(){
+        String time = String.format("%02d:%02d:%02d", finalTime/3600000, finalTime%3600000/60000, finalTime%3600000%60000/1000);
         return time;
     }
 

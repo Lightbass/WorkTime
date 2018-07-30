@@ -52,17 +52,17 @@
 
         <div class="button-container">
             <% if(work.getStatus() != 1) { %>
-            <a href="/work?status=1">
+            <a href="./?status=1">
                 Пришел
             </a>
             <% } %>
             <% if(work.getStatus() == 1) { %>
-            <a href="/work?status=2">
+            <a href="./?status=2">
                 Ушел
             </a>
             <% } %>
             <% if(work.getStatus() == 1) { %>
-            <a href="/work?status=0">
+            <a href="./?status=0">
                 Отработал
             </a>
             <% } %>
@@ -77,7 +77,7 @@
             <% } %>
 		</p>
 		<% if(work.getTime() != 0 && work.getStatus() == 0) { %>
-		    <p> Количество отработанных часов:
-		    <%= work.getTime() %>  </p>
+		    <p> Отработанное время:
+		    <%= work.getTimeString() %>  </p>
 		<% } %>
 </html>
